@@ -1,4 +1,10 @@
 # RabbitmqClient
+[![Gem Version](https://badge.fury.io/rb/rabbitmq_client.svg)](https://badge.fury.io/rb/rabbitmq_client)
+[![Build Status](https://travis-ci.com/wshihadeh/rabbitmq_client.svg?branch=master)](https://travis-ci.com/wshihadeh/rabbitmq_client)
+[![Depfu](https://badges.depfu.com/badges/b7ffc2788d24431bf85864706c5f9fb2/count.svg)](https://depfu.com/github/wshihadeh/rabbitmq_client?project_id=9862)
+[![Coverage](https://wshihadeh.github.io/rabbitmq_client/badges/coverage_badge_total.svg)](https://wshihadeh.github.io/rabbitmq_client/coverage/index.html)
+[![RubyCritic](https://wshihadeh.github.io/rabbitmq_client/badges/rubycritic_badge_score.svg)](https://wshihadeh.github.io/rabbitmq_client/tmp/rubycritic/overview.html)
+
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rabbitmq_client`. To experiment with that code, run `bin/console` for an interactive prompt.
 

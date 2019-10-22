@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rabbitmq_client (0.1.0)
+    rabbitmq_client (0.0.0.pre)
       activesupport (~> 6.0.0)
       bunny (~> 2.14.3)
       connection_pool (~> 2.2.2)
