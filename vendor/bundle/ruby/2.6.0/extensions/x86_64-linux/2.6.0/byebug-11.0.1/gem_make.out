@@ -1,0 +1,19 @@
+current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+/home/travis/.rvm/rubies/ruby-2.6.4/bin/ruby -I /home/travis/.rvm/rubies/ruby-2.6.4/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191022-6719-18xijay.rb extconf.rb
+creating Makefile
+
+current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -m 0755 byebug.so ./.gem.20191022-6719-1wekjvq/byebug
