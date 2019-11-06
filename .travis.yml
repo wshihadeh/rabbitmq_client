@@ -6,12 +6,23 @@ branches:
 
 rvm:
 - 2.6.4
+
 cache: bundler
 bundler_args: "--jobs=3 --retry=3 --without production"
+
 matrix:
   fast_finish: true
+
 script:
 - sh script/travis.sh
+
+notifications:
+  email: false    # default notification method
+  slack:
+    if: branch = master
+    rooms:
+      secure: S5yfvL5slwkKqkIkUSEz3jcdMUGcaZ6tSlAL3h59p+Mlj40ezvKPvG3ZsSYw170+BQK0sxouxm1BpIGZ/aPu3ou6cK28eaaHrtS/CIVDM/6exobruWFAoidkjyyXyolzXAn/htAqOt3S21mCLfYDafUL2LeAnsheGf+TfPdKoBVwXzjn14RBsxW9qMOZ9rOgwxAikBtKELZyEr9MhBnLiJCSWFG/+sCvdYfpmAPvIlobZS65/943jbmUDMt0gu/AaW3De/97CaYF0rcxiiJVw/foDCJ5mX2UbzfGearxPzyF6F0ZjxGKHBEDQ+mqOE+cSPEKnkCc+YsBT4RhiyCWJupoEiCKbk3jy06n+8sT/PKvv+wDy4CUtYnqSXxSTVrUTWyqItxVEXUjK/+H8A7YosTC3FtVfYyZlVnmur0VitOCF9SKVUi+RtIrExGu5lI/Jvy6gUw6J2+tjWcDIoUuJ6iAKe84cRf1DUY4um3/M8QFI1QH21s9DT2bBfi5ombKeB4GkVqF7r26qbt18cDrYJwdUCVdRlYsXVyocHbrsBydBicUoTdbLLJlFI1PY4EiXNVlgVQKpnWdsodCu73xnLKxazqWX77gucXkvfIAKcu3br/onIU8IRGSPWKl7Bxo64/sNym4ZHFUYUS+ODFXUwiyykQcnyc25YnlgmHSDSo=
+
 deploy:
   provider: pages
   skip-cleanup: true
