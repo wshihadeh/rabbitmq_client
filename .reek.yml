@@ -1,0 +1,21 @@
+---
+detectors:
+  LongParameterList:
+    max_params: 5
+  TooManyStatements:
+    enabled: true
+    max_statements: 10
+  UncommunicativeVariableName:
+    accept:
+      - e
+  Attribute:
+    exclude:
+      - "RabbitmqClient::Plugin#callback_block"
+  UtilityFunction:
+    exclude:
+      - 'RabbitmqClient::Publisher#notify'
+      - 'LogSubscriberBase#logger'
+      - 'RabbitmqClient::JsonLogSubscriber'
+  FeatureEnvy:
+    exclude:
+      - 'RabbitmqClient::PlainLogSubscriber'
