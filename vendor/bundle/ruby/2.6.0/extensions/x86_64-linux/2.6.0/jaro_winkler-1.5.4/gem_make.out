@@ -1,5 +1,5 @@
 current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
-/home/travis/.rvm/rubies/ruby-2.6.4/bin/ruby -I /home/travis/.rvm/rubies/ruby-2.6.4/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191106-6784-1jjne8i.rb extconf.rb
+/home/travis/.rvm/rubies/ruby-2.6.4/bin/ruby -I /home/travis/.rvm/rubies/ruby-2.6.4/lib/ruby/site_ruby/2.6.0 -r ./siteconf20191222-6754-sfke20.rb extconf.rb
 creating Makefile
 
 current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
@@ -66,4 +66,4 @@ linking shared-object jaro_winkler/jaro_winkler_ext.so
 
 current directory: /home/travis/build/wshihadeh/rabbitmq_client/vendor/bundle/ruby/2.6.0/gems/jaro_winkler-1.5.4/ext/jaro_winkler
 make "DESTDIR=" install
-/usr/bin/install -m 0755 jaro_winkler_ext.so ./.gem.20191106-6784-1sytu6d/jaro_winkler
+/usr/bin/install -m 0755 jaro_winkler_ext.so ./.gem.20191222-6754-1ih7nmo/jaro_winkler
