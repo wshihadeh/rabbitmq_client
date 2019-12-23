@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'activesupport', '~> 6.0.0'
   spec.add_runtime_dependency 'bunny', '~> 2.14.3'
   spec.add_runtime_dependency 'connection_pool', '~> 2.2.2'
+  spec.add_runtime_dependency 'sucker_punch', '~> 2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.17.2'
   spec.add_development_dependency 'byebug', '~> 11.0.1'
