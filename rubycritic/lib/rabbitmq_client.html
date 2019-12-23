@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2019-11-06 22:27:27 +0100'>2019-11-06 22:27:27 +0100</time>
+          Updated <time class='js-timeago' datetime='2019-12-23 17:58:34 +0100'>2019-12-23 17:58:34 +0100</time>
         
       </span>
     </div>
@@ -65,12 +65,12 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">105</span><small> lines of codes</small></div>
+              <div><span class="metric">106</span><small> lines of codes</small></div>
               <div><span class="metric">8</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">5.3</span><small> complexity/method</small></div>
-              <div><span class="metric">2</span><small> churn</small></div>
+              <div><span class="metric">3</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
               <div><span class="metric">42.53</span><small> complexity</small></div>
@@ -149,6 +149,7 @@ module RabbitmqClient
   config_accessor(:session_params, instance_accessor: false) do
     {
       heartbeat_publisher: 0,
+      async_publisher: true,
       session_pool: 1
     }
   end

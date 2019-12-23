@@ -49,7 +49,7 @@
       </span>
     </div>
     <div>
-      <h3><small>lib/rabbitmq_client /</small> publisher.rb</h3>
+      <h3><small>lib/rabbitmq_client /</small> publisher_job.rb</h3>
     </div>
   </div>
   <!--End Page Title -->
@@ -65,15 +65,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">73</span><small> lines of codes</small></div>
-              <div><span class="metric">8</span><small> methods</small></div>
+              <div><span class="metric">40</span><small> lines of codes</small></div>
+              <div><span class="metric">3</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">4.3</span><small> complexity/method</small></div>
-              <div><span class="metric">2</span><small> churn</small></div>
+              <div><span class="metric">6.2</span><small> complexity/method</small></div>
+              <div><span class="metric">1</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">34.04</span><small> complexity</small></div>
+              <div><span class="metric">18.68</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -96,66 +96,33 @@
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code"># frozen_string_literal: true
 
-require_relative &#39;publisher_job&#39;
+require_relative &#39;message_publisher&#39;
+require &#39;sucker_punch&#39;
 
 module RabbitmqClient
   # Publisher class is responsible for publishing events to rabbitmq exhanges
-  class Publisher
-    def initialize(**config)
-      @config = config
-      @session_params = session_params
-      @exchange_registry = @config.fetch(:exchange_registry, nil)
-      @session_params.freeze
-      @session_pool = create_connection_pool
-      notify(&#39;publisher_created&#39;, @session_params)
-    end
+  class PublisherJob
+    include SuckerPunch::Job
 
-    def publish(data, options)
-      return nil unless @exchange_registry
-
-      if async
-        PublisherJob.perform_async(@exchange_registry,
-                                   @session_pool, data, options)
-      else
-        PublisherJob.new.perform(@exchange_registry,
-                                 @session_pool, data, options)
-      end
+    def perform(registry, session_pool, data, options)
+      handle_publish_event(registry, session_pool, data, options)
+    rescue StandardError =&gt; e
+      notify(&#39;network_error&#39;, error: e, options: options)
+      raise
     end
 
     private
 
-    def async
-      @config.dig(:session_params, :async_publisher) || false
-    end
-
-    def overwritten_config_notification
-      return unless overwritten_config?
-
-      notify(&#39;overriding_configs&#39;,
-             threaded: false,
-             automatically_recover: false)
-    end
-
-    def overwritten_config?
-      @config.dig(:session_params, :threaded) ||
-        @config.dig(:session_params, :automatically_recover)
-    end
-
-    def session_params
-      overwritten_config_notification
-      @config.fetch(:session_params, {})
-             .merge(threaded: false,
-                    automatically_recover: false,
-                    heartbeat: @config.dig(
-                      :session_params, :heartbeat_publisher
-                    ) || 0)
-    end
-
-    def create_connection_pool
-      pool_size = @session_params.fetch(:session_pool, 1)
-      ConnectionPool.new(size: pool_size) do
-        Bunny.new(@config[:rabbitmq_url],
-                  { logger: RabbitmqClient.logger }.merge(@session_params))
+    def handle_publish_event(registry, session_pool, data, options)
+      exchange = registry.find(options.fetch(:exchange_name, nil))
+      session_pool.with do |session|
+        session.start
+        channel = session.create_channel
+        channel.confirm_select
+        message = MessagePublisher.new(data, exchange, channel, options)
+        message.publish
+        message.wait_for_confirms
+        channel.close
       end
     end
 
