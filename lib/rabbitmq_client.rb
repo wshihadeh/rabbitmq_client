@@ -53,6 +53,7 @@ module RabbitmqClient
   config_accessor(:session_params, instance_accessor: false) do
     {
       heartbeat_publisher: 0,
+      async_publisher: true,
       session_pool: 1
     }
   end

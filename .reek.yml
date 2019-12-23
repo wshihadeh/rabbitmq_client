@@ -13,6 +13,8 @@ detectors:
       - "RabbitmqClient::Plugin#callback_block"
   UtilityFunction:
     exclude:
+      - 'RabbitmqClient::PublisherJob#notify'
+      - 'RabbitmqClient::PublisherJob#handle_publish_event'
       - 'RabbitmqClient::Publisher#notify'
       - 'LogSubscriberBase#logger'
       - 'RabbitmqClient::JsonLogSubscriber'

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'message_publisher'
+require_relative 'publisher_job'
 
 module RabbitmqClient
   # Publisher class is responsible for publishing events to rabbitmq exhanges
@@ -17,13 +17,20 @@ module RabbitmqClient
     def publish(data, options)
       return nil unless @exchange_registry
 
-      handle_publish_event(data, options)
-    rescue StandardError => e
-      notify('network_error', error: e, options: options)
-      raise
+      if async
+        PublisherJob.perform_async(@exchange_registry,
+                                   @session_pool, data, options)
+      else
+        PublisherJob.new.perform(@exchange_registry,
+                                 @session_pool, data, options)
+      end
     end
 
     private
+
+    def async
+      @config.dig(:session_params, :async_publisher) || false
+    end
 
     def overwritten_config_notification
       return unless overwritten_config?
@@ -46,19 +53,6 @@ module RabbitmqClient
                     heartbeat: @config.dig(
                       :session_params, :heartbeat_publisher
                     ) || 0)
-    end
-
-    def handle_publish_event(data, options)
-      exchange = @exchange_registry.find(options.fetch(:exchange_name, nil))
-      @session_pool.with do |session|
-        session.start
-        channel = session.create_channel
-        channel.confirm_select
-        message = MessagePublisher.new(data, exchange, channel, options)
-        message.publish
-        message.wait_for_confirms
-        channel.close
-      end
     end
 
     def create_connection_pool

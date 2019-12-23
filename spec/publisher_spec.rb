@@ -126,6 +126,30 @@ describe RabbitmqClient::Publisher do
       end
     end
 
+    context 'when async is enabled' do
+      let(:exchange_registry) { RabbitmqClient::ExchangeRegistry.new }
+      let(:publisher) do
+        described_class.new(exchange_registry: exchange_registry,
+                            session_params: { async_publisher: true })
+      end
+      let(:type) { 'test' }
+      let(:options) { {} }
+
+      before do
+        exchange_registry.add(exchange_name, type, options)
+        allow(RabbitmqClient::PublisherJob).to receive(:perform_async)
+      end
+
+      it 'defines exchange' do
+        publisher.publish('message',
+                          message_id: 'abc',
+                          exchange_name: exchange_name)
+        expect(
+          RabbitmqClient::PublisherJob
+        ).to have_received(:perform_async)
+      end
+    end
+
     context 'when error raised' do
       let(:error) { StandardError.new('network_error') }
       let(:exchange_registry) { double('exchange_registry') }
