@@ -127,7 +127,7 @@ end
 ## <a name="plugins"></a> Plugins
 RabbitmqClient plugins are classes that define a callbacks that can be executed before or after events that occuers during RabbitmqClient lifecycle.
 Current supprted lifecycle events are:
-  - publish: occure when publisgin a massage is triggered.
+  - publish: occure when publishing a massage is triggered.
 
 Here is an example where we define a plugin to add some headers to message options before publishing the message.
 

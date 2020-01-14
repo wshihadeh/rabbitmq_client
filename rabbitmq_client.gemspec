@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   spec.metadata['homepage_uri'] = spec.homepage
 
-  spec.add_runtime_dependency 'activesupport', '~> 6.0.0'
-  spec.add_runtime_dependency 'bunny', '~> 2.14.3'
+  spec.add_runtime_dependency 'activesupport', '> 5.0.0'
+  spec.add_runtime_dependency 'bunny', '>= 2.7.4'
   spec.add_runtime_dependency 'connection_pool', '~> 2.2.2'
   spec.add_runtime_dependency 'sucker_punch', '~> 2.0'
 
