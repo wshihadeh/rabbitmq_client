@@ -57,7 +57,8 @@ module RabbitmqClient
 
     def create_connection_pool
       pool_size = @session_params.fetch(:session_pool, 1)
-      ConnectionPool.new(size: pool_size) do
+      pool_timeout = @session_params.fetch(:session_pool_timeout, 5)
+      ConnectionPool.new(size: pool_size, timeout: pool_timeout) do
         Bunny.new(@config[:rabbitmq_url],
                   { logger: RabbitmqClient.logger }.merge(@session_params))
       end
