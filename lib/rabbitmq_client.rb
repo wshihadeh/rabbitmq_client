@@ -50,11 +50,13 @@ module RabbitmqClient
   # default rabbitmq configs
   # heartbeat_publisher = 0
   # session_pool = 1
+  # session_pool_timeout = 5
   config_accessor(:session_params, instance_accessor: false) do
     {
       heartbeat_publisher: 0,
       async_publisher: true,
-      session_pool: 1
+      session_pool: 1,
+      session_pool_timeout: 5
     }
   end
 
