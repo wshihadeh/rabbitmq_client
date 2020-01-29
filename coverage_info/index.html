@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-14T14:29:41+00:00">2020-01-14T14:29:41+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-29T08:31:18+00:00">2020-01-29T08:31:18+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.34
+         3.35
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>16</b> files in total.
-    <b>352</b> relevant lines. 
-    <span class="green"><b>352</b> lines covered</span> and
+    <b>353</b> relevant lines. 
+    <span class="green"><b>353</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,7 +53,7 @@
       <tr>
         <td class="strong"><a href="#5a976636325e25033b015514ab7bea8121c23f9b" class="src_link" title="lib/rabbitmq_client.rb">lib/rabbitmq_client.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>106</td>
+        <td>108</td>
         <td>50</td>
         <td>50</td>
         <td>0</td>
@@ -173,11 +173,11 @@
       <tr>
         <td class="strong"><a href="#022f4a40a9ace87e65603a3bd07a569bce0d7b66" class="src_link" title="lib/rabbitmq_client/publisher.rb">lib/rabbitmq_client/publisher.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>73</td>
-        <td>32</td>
-        <td>32</td>
+        <td>74</td>
+        <td>33</td>
+        <td>33</td>
         <td>0</td>
-        <td>4.4</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -552,196 +552,196 @@
           <code class="ruby">  # session_pool = 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">  # session_pool_timeout = 5</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">  config_accessor(:session_params, instance_accessor: false) do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">    {</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
           <code class="ruby">      heartbeat_publisher: 0,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">      async_publisher: true,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">      session_pool: 1</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">    }</code>
+          <code class="ruby">      session_pool: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      session_pool_timeout: 5</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="61">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  config_accessor(:plugins, instance_accessor: false) { [] }</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="62">
-          <span class="hits">2</span>
-          
-          <code class="ruby">  config_accessor(:global_store, instance_accessor: false) { nil }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  config_accessor(:whitelist, instance_accessor: false) do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    [&#39;x-request-id&#39;.to_sym]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="63">
+          <span class="hits">2</span>
           
-          <code class="ruby">  class &lt;&lt; self</code>
+          <code class="ruby">  config_accessor(:plugins, instance_accessor: false) { [] }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="2" data-linenumber="64">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  config_accessor(:global_store, instance_accessor: false) { nil }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">    def add_exchange(name, type, options = {})</code>
+          <code class="ruby">  config_accessor(:whitelist, instance_accessor: false) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    [&#39;x-request-id&#39;.to_sym]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
+          <code class="ruby">  class &lt;&lt; self</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def add_exchange(name, type, options = {})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
           <code class="ruby">      @exchange_registry.add(name, type, options)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
           <code class="ruby">    def publish(payload, options = {})</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
           <code class="ruby">      publisher.publish(payload, options)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
           <code class="ruby">    def lifecycle</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="77">
+        <li class="covered" data-hits="3" data-linenumber="79">
           <span class="hits">3</span>
           
           <code class="ruby">      @lifecycle ||= setup_lifecycle</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
           <code class="ruby">    def logger</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="81">
+        <li class="covered" data-hits="6" data-linenumber="83">
           <span class="hits">6</span>
           
           <code class="ruby">      @logger ||= setup_logger</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
@@ -753,124 +753,136 @@
         <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
+          <code class="ruby">    private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
           <code class="ruby">    def setup_logger</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="87">
+        <li class="covered" data-hits="3" data-linenumber="89">
           <span class="hits">3</span>
           
           <code class="ruby">      LoggerBuilder.new(config[:logger_configs]).build_logger</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
           <code class="ruby">    def publisher</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
+        <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
           <code class="ruby">      @publisher ||= init_publisher</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
           <code class="ruby">    def init_publisher</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
           <code class="ruby">      Publisher.new(config.merge(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">                      exchange_registry: @exchange_registry</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">                    ))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
           <code class="ruby">    def setup_lifecycle</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="101">
+        <li class="covered" data-hits="2" data-linenumber="103">
           <span class="hits">2</span>
           
           <code class="ruby">      @lifecycle = Lifecycle.new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="102">
+        <li class="covered" data-hits="2" data-linenumber="104">
           <span class="hits">2</span>
           
           <code class="ruby">      plugins.each(&amp;:new)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="103">
+        <li class="covered" data-hits="2" data-linenumber="105">
           <span class="hits">2</span>
           
           <code class="ruby">      @lifecycle</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="106">
+        <li class="never" data-hits="" data-linenumber="108">
           
           
           <code class="ruby">end</code>
@@ -3975,8 +3987,8 @@
     <h3>lib/rabbitmq_client/publisher.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>32</b> lines covered</span> and
+      <b>33</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4341,82 +4353,88 @@
         <li class="covered" data-hits="8" data-linenumber="60">
           <span class="hits">8</span>
           
-          <code class="ruby">      ConnectionPool.new(size: pool_size) do</code>
+          <code class="ruby">      pool_timeout = @session_params.fetch(:session_pool_timeout, 5)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="61">
+        <li class="covered" data-hits="8" data-linenumber="61">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      ConnectionPool.new(size: pool_size, timeout: pool_timeout) do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="62">
           <span class="hits">3</span>
           
           <code class="ruby">        Bunny.new(@config[:rabbitmq_url],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">                  { logger: RabbitmqClient.logger }.merge(@session_params))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">    def notify(event, payload = {})</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="67">
+        <li class="covered" data-hits="10" data-linenumber="68">
           <span class="hits">10</span>
           
           <code class="ruby">      ActiveSupport::Notifications.instrument(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">        &quot;#{event}.rabbitmq_client&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">        payload</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">      )</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>

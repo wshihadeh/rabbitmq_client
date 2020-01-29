@@ -44,7 +44,7 @@
     <div class="file-time">
       <span class="committed-at">
         
-          Updated <time class='js-timeago' datetime='2019-12-23 17:58:34 +0100'>2019-12-23 17:58:34 +0100</time>
+          Updated <time class='js-timeago' datetime='2020-01-28 15:38:48 +0200'>2020-01-28 15:38:48 +0200</time>
         
       </span>
     </div>
@@ -65,15 +65,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">73</span><small> lines of codes</small></div>
+              <div><span class="metric">74</span><small> lines of codes</small></div>
               <div><span class="metric">8</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">4.3</span><small> complexity/method</small></div>
-              <div><span class="metric">2</span><small> churn</small></div>
+              <div><span class="metric">4.5</span><small> complexity/method</small></div>
+              <div><span class="metric">3</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">34.04</span><small> complexity</small></div>
+              <div><span class="metric">35.63</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -153,7 +153,8 @@ module RabbitmqClient
 
     def create_connection_pool
       pool_size = @session_params.fetch(:session_pool, 1)
-      ConnectionPool.new(size: pool_size) do
+      pool_timeout = @session_params.fetch(:session_pool_timeout, 5)
+      ConnectionPool.new(size: pool_size, timeout: pool_timeout) do
         Bunny.new(@config[:rabbitmq_url],
                   { logger: RabbitmqClient.logger }.merge(@session_params))
       end
