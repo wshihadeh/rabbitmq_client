@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubycritic-small-badge', '~> 0.2.1'
   spec.add_development_dependency 'simplecov', '~> 0.17.1'
   spec.add_development_dependency 'simplecov-small-badge', '~> 0.2.4'
-  spec.add_development_dependency 'solargraph', '~> 0.37.2'
+  spec.add_development_dependency 'solargraph', '~> 0.38.5'
   spec.add_development_dependency 'timecop', '~> 0.9.1'
 
   spec.files         = `git ls-files`.split("\n")
