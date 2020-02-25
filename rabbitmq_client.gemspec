@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 13.0.0'
   spec.add_development_dependency 'rspec', '~> 3.9.0'
   spec.add_development_dependency 'rubocop', '~> 0.75.1'
-  spec.add_development_dependency 'rubycritic', '~> 4.1.0'
+  spec.add_development_dependency 'rubycritic', '~> 4.4.1'
   spec.add_development_dependency 'rubycritic-small-badge', '~> 0.2.1'
   spec.add_development_dependency 'simplecov', '~> 0.17.1'
   spec.add_development_dependency 'simplecov-small-badge', '~> 0.2.4'
