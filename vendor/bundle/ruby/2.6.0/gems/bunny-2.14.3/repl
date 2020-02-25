@@ -1,3 +1,0 @@
-#!/bin/sh
-
-bundle exec ripl -Ilib -r'bunny' -r'ripl/multi_line' -r'ripl/irb'
